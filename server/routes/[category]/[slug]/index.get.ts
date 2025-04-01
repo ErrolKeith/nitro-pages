@@ -4,13 +4,6 @@ import { render } from "~/utils/page-renderer/renderer";
 export default defineEventHandler((event) => {
   const { category, slug } = getRouterParams(event);
 
-  if (!category) {
-    return render({
-      type: "404",
-      clientGlobals,
-    });
-  }
-
   const pageContext = getCategoryPageBySlug(category, slug);
 
   if (!pageContext) {
