@@ -1,24 +1,6 @@
-import { clientGlobals } from "~/test-data";
+import { clientGlobals, pages } from "~/seed-data";
 import { PageRouteContext } from "~/types";
-import { render } from "~/utils/page-renderer/page";
-
-const pages: PageRouteContext[] = [
-  {
-    slug: "",
-    title: clientGlobals.companyName,
-    heroText: "Product you need right now",
-  },
-  {
-    slug: "about",
-    title: "About",
-    heroText: `About ${clientGlobals.companyName}`,
-  },
-  {
-    slug: "contact",
-    title: "Contact",
-    heroText: `Contact ${clientGlobals.companyName}`,
-  },
-];
+import { render } from "~/utils/page-renderer/renderer";
 
 function getPageBySlug(slug: string): PageRouteContext | undefined {
   return pages.find((page) => page.slug === slug);
