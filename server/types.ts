@@ -1,5 +1,12 @@
+export interface BusinessClientGlobalsCollection {
+  businessId: string; //uuidv4
+  sites: string[]; //uuidv4[]
+  companyName: string;
+  phoneNumber: string;
+}
+
 export interface Globals {
-  businessId: number;
+  businessId: string; //uuidv4
   siteId: string;
   companyName: string;
   phoneNumber: string;
@@ -11,7 +18,7 @@ export interface PageRouteContext {
   categories: string[];
 }
 
-export interface PageNotFoundRenderConfig {
+interface PageNotFoundRenderConfig {
   type: "404";
   clientGlobals: Globals;
 }

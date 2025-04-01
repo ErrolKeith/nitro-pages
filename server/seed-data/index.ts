@@ -1,20 +1,43 @@
-import type { Globals, PageRouteContext } from "../types";
-// TODO: everything in this file should be Db data.
+// TODO: everything in this file should be DB data.
+import { Globals, PageRouteContext } from "../types";
 
-const clientGlobals: Globals = {
-  businessId: 1,
-  siteId: "4efb01e4-7ab4-42cb-9cdf-7cfe9b58a5b1",
+const randomBusinessClient = {
+  businessId: "4efb01e4-7ab4-42cb-9cdf-7cfe9b58a5b1",
+  siteId: "23bad6e0-6b06-43d5-9c45-8a42fdf38046",
   companyName: "Operatin Bidness",
-  phoneNumber: "5554443333",
+  phone: "5554443333",
 };
+
+const globalsCollection: Globals[] = [
+  {
+    businessId: randomBusinessClient.businessId, //primary key
+    siteId: randomBusinessClient.siteId,
+    companyName: randomBusinessClient.companyName,
+    phoneNumber: randomBusinessClient.phone,
+  },
+];
+
+const categoriesCollection = [
+  {
+    businessId: "4efb01e4-7ab4-42cb-9cdf-7cfe9b58a5b1", // foreign-key
+    slug: "service",
+    siteId: "23bad6e0-6b06-43d5-9c45-8a42fdf38046",
+  },
+  {
+    businessId: "4efb01e4-7ab4-42cb-9cdf-7cfe9b58a5b1", // foreign-key
+    slug: "product",
+    siteId: "23bad6e0-6b06-43d5-9c45-8a42fdf38046",
+  },
+];
 
 const serviceCategory = "service";
 const productCategory = "product";
-
-const pages: PageRouteContext[] = [
+const pageCollection: PageRouteContext[] = [
   {
     slug: "",
-    title: clientGlobals.companyName,
+    title: globalsCollection.find(
+      (global) => global.businessId === randomBusinessClient.businessId
+    ).companyName,
     categories: [],
   },
   {
@@ -49,12 +72,22 @@ const pages: PageRouteContext[] = [
   },
 ];
 
+function getPageCollection(): PageRouteContext[] {
+  return pageCollection;
+}
+
+function getGlobalsByBusinessId(id: string) {
+  return globalsCollection.find(
+    (global) => (global.businessId = randomBusinessClient.businessId)
+  );
+}
+
 function getPageBySlug(slug: string): PageRouteContext | undefined {
-  return pages.find((page) => page.slug === slug);
+  return pageCollection.find((page) => page.slug === slug);
 }
 
 function getCategoryIndex(category: string) {
-  return pages.filter((page) => {
+  return pageCollection.filter((page) => {
     if (page.categories.includes(category)) return true;
     return false;
   });
@@ -69,9 +102,10 @@ function getCategoryPageBySlug(
 }
 
 export {
-  clientGlobals,
-  pages,
   getCategoryPageBySlug,
-  getPageBySlug,
   getCategoryIndex,
+  getGlobalsByBusinessId,
+  getPageBySlug,
+  getPageCollection,
+  randomBusinessClient,
 };

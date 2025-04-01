@@ -1,4 +1,8 @@
-import { clientGlobals, getPageBySlug } from "~/seed-data";
+import {
+  getGlobalsByBusinessId,
+  getPageBySlug,
+  randomBusinessClient,
+} from "~/seed-data";
 import { render } from "~/utils/page-renderer/renderer";
 
 export default defineEventHandler((event) => {
@@ -8,13 +12,13 @@ export default defineEventHandler((event) => {
   if (!page) {
     return render({
       type: "404",
-      clientGlobals,
+      clientGlobals: getGlobalsByBusinessId(randomBusinessClient.businessId),
     });
   }
 
   return render({
     type: "page",
-    clientGlobals,
+    clientGlobals: getGlobalsByBusinessId(randomBusinessClient.businessId),
     pageContext: page,
   });
 });
