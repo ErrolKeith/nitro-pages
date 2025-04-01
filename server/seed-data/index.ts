@@ -59,7 +59,7 @@ function getCategoryIndex(category: string) {
   });
 }
 
-function getCategoryBySlug(
+function getCategoryPageBySlug(
   category: string,
   slug: string
 ): PageRouteContext | undefined {
@@ -67,4 +67,4 @@ function getCategoryBySlug(
   return pagesWithCategory.find((page) => page.slug === slug);
 }
 
-export { clientGlobals, pages, getCategoryBySlug, getPageBySlug };
+export { clientGlobals, pages, getCategoryPageBySlug, getPageBySlug };

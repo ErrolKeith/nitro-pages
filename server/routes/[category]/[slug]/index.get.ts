@@ -1,4 +1,4 @@
-import { clientGlobals, getCategoryBySlug } from "~/seed-data";
+import { clientGlobals, getCategoryPageBySlug } from "~/seed-data";
 import { render } from "~/utils/page-renderer/renderer";
 
 export default defineEventHandler((event) => {
@@ -11,7 +11,7 @@ export default defineEventHandler((event) => {
     });
   }
 
-  const pageContext = getCategoryBySlug(category, slug);
+  const pageContext = getCategoryPageBySlug(category, slug);
 
   if (!pageContext) {
     return render({
