@@ -3,8 +3,8 @@ import type { Globals, PageRouteContext } from "../types";
 
 const clientGlobals: Globals = {
   siteId: "4efb01e4-7ab4-42cb-9cdf-7cfe9b58a5b1",
-  companyName: "Bidness",
-  phoneNumber: "5555555555",
+  companyName: "Operatin Bidness",
+  phoneNumber: "5554443333",
 };
 
 const serviceCategory = "service";
@@ -52,14 +52,19 @@ function getPageBySlug(slug: string): PageRouteContext | undefined {
   return pages.find((page) => page.slug === slug);
 }
 
+function getCategoryIndex(category: string) {
+  return pages.filter((page) => {
+    if (page.categories.includes(category)) return true;
+    return false;
+  });
+}
+
 function getCategoryBySlug(
   category: string,
   slug: string
 ): PageRouteContext | undefined {
-  return pages.find((page) => {
-    if (page.slug === slug && page.categories.includes(category)) return true;
-    return false;
-  });
+  const pagesWithCategory = getCategoryIndex(category);
+  return pagesWithCategory.find((page) => page.slug === slug);
 }
 
 export { clientGlobals, pages, getCategoryBySlug, getPageBySlug };
