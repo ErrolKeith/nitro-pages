@@ -48,4 +48,18 @@ const pages: PageRouteContext[] = [
   },
 ];
 
-export { clientGlobals, pages };
+function getPageBySlug(slug: string): PageRouteContext | undefined {
+  return pages.find((page) => page.slug === slug);
+}
+
+function getCategoryBySlug(
+  category: string,
+  slug: string
+): PageRouteContext | undefined {
+  return pages.find((page) => {
+    if (page.slug === slug && page.categories.includes(category)) return true;
+    return false;
+  });
+}
+
+export { clientGlobals, pages, getCategoryBySlug, getPageBySlug };

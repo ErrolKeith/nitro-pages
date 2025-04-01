@@ -1,16 +1,6 @@
-import { clientGlobals, pages } from "~/seed-data";
 import { PageRouteContext } from "~/types";
+import { clientGlobals, getCategoryBySlug, pages } from "~/seed-data";
 import { render } from "~/utils/page-renderer/renderer";
-
-function getCategoryBySlug(
-  category: string,
-  slug: string
-): PageRouteContext | undefined {
-  return pages.find((page) => {
-    if (page.slug === slug && page.categories.includes(category)) return true;
-    return false;
-  });
-}
 
 export default defineEventHandler((event) => {
   const { category, slug } = getRouterParams(event);
