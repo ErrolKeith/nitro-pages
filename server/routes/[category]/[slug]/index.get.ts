@@ -1,5 +1,4 @@
-import { PageRouteContext } from "~/types";
-import { clientGlobals, getCategoryBySlug, pages } from "~/seed-data";
+import { clientGlobals, getCategoryBySlug } from "~/seed-data";
 import { render } from "~/utils/page-renderer/renderer";
 
 export default defineEventHandler((event) => {
@@ -12,9 +11,9 @@ export default defineEventHandler((event) => {
     });
   }
 
-  const page = getCategoryBySlug(category, slug);
+  const pageContext = getCategoryBySlug(category, slug);
 
-  if (!page) {
+  if (!pageContext) {
     return render({
       type: "404",
       clientGlobals,
@@ -24,6 +23,6 @@ export default defineEventHandler((event) => {
   return render({
     type: "page",
     clientGlobals,
-    pageContext: page,
+    pageContext,
   });
 });
