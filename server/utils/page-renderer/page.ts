@@ -16,7 +16,7 @@ const pageTemplate = Handlebars.compile(`
     </div>
     </main>
   </body>
-  `);
+`);
 
 const pageNotFoundTemplate = Handlebars.compile(`
   <head>
