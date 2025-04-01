@@ -51,7 +51,6 @@ function render(config: RenderConfig) {
       title: `${config.clientGlobals.companyName} | ${config.pageContext.title}`,
       heading: config.pageContext.title,
       heroText: config.pageContext.heroText,
-      cta: config.pageContext.cta,
     });
   }
 

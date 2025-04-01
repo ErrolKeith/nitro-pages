@@ -11,9 +11,7 @@ export interface PageRouteContext {
   heroText: string;
 }
 
-export interface ServiceRouteContext extends PageRouteContext {
-  cta: string;
-}
+export interface ServiceRouteContext extends PageRouteContext {}
 
 export interface NotFoundRenderConfig {
   type: "404";
