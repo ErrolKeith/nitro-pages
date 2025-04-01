@@ -1,4 +1,5 @@
 export interface Globals {
+  businessId: number;
   siteId: string;
   companyName: string;
   phoneNumber: string;

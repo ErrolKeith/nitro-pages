@@ -2,6 +2,7 @@ import type { Globals, PageRouteContext } from "../types";
 // TODO: everything in this file should be Db data.
 
 const clientGlobals: Globals = {
+  businessId: 1,
   siteId: "4efb01e4-7ab4-42cb-9cdf-7cfe9b58a5b1",
   companyName: "Operatin Bidness",
   phoneNumber: "5554443333",
