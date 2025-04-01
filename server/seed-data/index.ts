@@ -67,4 +67,10 @@ function getCategoryPageBySlug(
   return pagesWithCategory.find((page) => page.slug === slug);
 }
 
-export { clientGlobals, pages, getCategoryPageBySlug, getPageBySlug };
+export {
+  clientGlobals,
+  pages,
+  getCategoryPageBySlug,
+  getPageBySlug,
+  getCategoryIndex,
+};
