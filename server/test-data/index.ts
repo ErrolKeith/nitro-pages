@@ -1,10 +1,10 @@
 import type { Globals } from "../types";
 
-const globalDefaults: Globals = {
+const clientGlobals: Globals = {
   siteId: "[unique-site-uuid]",
   companyName: "[Company Name]",
   phoneNumber: "[Phone Number]",
-  services: ["[product-1]", "[product-2]"],
+  services: ["phenominal-service", "unique-product"],
 };
 
-export { globalDefaults };
+export { clientGlobals };
