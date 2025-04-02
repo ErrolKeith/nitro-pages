@@ -1,37 +1,18 @@
 // TODO: everything in this file should be DB data.
 import { Globals, PageRouteContext } from "../types";
+const businessId = "4efb01e4-7ab4-42cb-9cdf-7cfe9b58a5b1";
 
-const randomBusinessClient = {
-  businessId: "4efb01e4-7ab4-42cb-9cdf-7cfe9b58a5b1",
+const randomServiceCategory = "service";
+const randomProductCategory = "product";
+const randomBusinessClient: Globals = {
+  businessId,
   siteId: "23bad6e0-6b06-43d5-9c45-8a42fdf38046",
   companyName: "Operatin Bidness",
-  phone: "5554443333",
+  phoneNumber: "5554443333",
 };
 
-const globalsCollection: Globals[] = [
-  {
-    businessId: randomBusinessClient.businessId, //primary key
-    siteId: randomBusinessClient.siteId,
-    companyName: randomBusinessClient.companyName,
-    phoneNumber: randomBusinessClient.phone,
-  },
-];
+const globalsCollection: Globals[] = [randomBusinessClient];
 
-const categoriesCollection = [
-  {
-    businessId: "4efb01e4-7ab4-42cb-9cdf-7cfe9b58a5b1", // foreign-key
-    slug: "service",
-    siteId: "23bad6e0-6b06-43d5-9c45-8a42fdf38046",
-  },
-  {
-    businessId: "4efb01e4-7ab4-42cb-9cdf-7cfe9b58a5b1", // foreign-key
-    slug: "product",
-    siteId: "23bad6e0-6b06-43d5-9c45-8a42fdf38046",
-  },
-];
-
-const serviceCategory = "service";
-const productCategory = "product";
 const pageCollection: PageRouteContext[] = [
   {
     slug: "",
@@ -53,22 +34,22 @@ const pageCollection: PageRouteContext[] = [
   {
     slug: "phenominal-service",
     title: "A Phenominal Service",
-    categories: [serviceCategory],
+    categories: [randomServiceCategory],
   },
   {
     slug: "secondary-service",
     title: "A Secondary Service",
-    categories: [serviceCategory],
+    categories: [randomServiceCategory],
   },
   {
     slug: "unique-product",
     title: "A Unique Product",
-    categories: [productCategory],
+    categories: [randomProductCategory],
   },
   {
     slug: "secondary-product",
     title: "A Secondary Product",
-    categories: [productCategory],
+    categories: [randomProductCategory],
   },
 ];
 
