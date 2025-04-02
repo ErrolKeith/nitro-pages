@@ -6,7 +6,7 @@ import {
 import { render } from "~/utils/page-renderer/renderer";
 
 export default defineEventHandler((event) => {
-  const slug = getRouterParam(event, "slug");
+  const { slug } = getRouterParams(event);
   const page = getPageBySlug(slug);
   const clientGlobals = getGlobalsByBusinessId(randomBusinessClient.businessId);
 

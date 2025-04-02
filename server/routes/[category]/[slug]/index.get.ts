@@ -7,10 +7,10 @@ import { render } from "~/utils/page-renderer/renderer";
 
 export default defineEventHandler((event) => {
   const { category, slug } = getRouterParams(event);
+  const page = getCategoryPageBySlug(category, slug);
   const clientGlobals = getGlobalsByBusinessId(randomBusinessClient.businessId);
-  const pageContext = getCategoryPageBySlug(category, slug);
 
-  if (!pageContext) {
+  if (!page) {
     return render({
       type: "404",
       clientGlobals,
@@ -20,6 +20,6 @@ export default defineEventHandler((event) => {
   return render({
     type: "page",
     clientGlobals,
-    pageContext,
+    pageContext: page,
   });
 });
