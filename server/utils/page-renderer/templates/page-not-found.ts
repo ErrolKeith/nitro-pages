@@ -5,14 +5,9 @@ export const pageNotFoundTemplate = Handlebars.compile(`
     <title>Page Not Found | {{ companyName }}</title>
   </head>
   <body data-site-id='{{ siteId }}'>
-    <h1>404</h1>
+    <h1>Page Not Found</h1>
     <main>
-    <div class="hero">Page Not Found</div>
-    <div>
-      <p>
-        Content
-      </p>
-    </div>
+    <div>404</div>
     </main>
   </body>
 `);
