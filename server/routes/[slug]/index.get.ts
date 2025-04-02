@@ -8,17 +8,18 @@ import { render } from "~/utils/page-renderer/renderer";
 export default defineEventHandler((event) => {
   const slug = getRouterParam(event, "slug");
   const page = getPageBySlug(slug);
+  const clientGlobals = getGlobalsByBusinessId(randomBusinessClient.businessId);
 
   if (!page) {
     return render({
       type: "404",
-      clientGlobals: getGlobalsByBusinessId(randomBusinessClient.businessId),
+      clientGlobals,
     });
   }
 
   return render({
     type: "page",
-    clientGlobals: getGlobalsByBusinessId(randomBusinessClient.businessId),
+    clientGlobals,
     pageContext: page,
   });
 });
