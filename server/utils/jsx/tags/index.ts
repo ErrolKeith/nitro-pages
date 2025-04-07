@@ -11,6 +11,7 @@ import { makeMeta, MetaProps } from "./meta";
 import { makeParagraph, ParagraphConfig } from "./p";
 import { makeSection, SectionConfig } from "./section";
 import { makeTitle, TitleProps } from "./title";
+import { Tag } from "./schema";
 
 export {
   makeAnchor,
@@ -42,6 +43,7 @@ export {
   MainConfig,
   MetaProps,
   ParagraphConfig,
-  TitleProps,
   SectionConfig,
+  Tag,
+  TitleProps,
 };
