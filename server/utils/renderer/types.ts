@@ -1,5 +1,5 @@
 import { SiteGlobals } from "~/types";
-import { TemplateType } from "./jsx/template";
+import { TemplateType } from "../jsx/template";
 
 export interface PageContext {
   template: TemplateType;
