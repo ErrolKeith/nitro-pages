@@ -6,5 +6,5 @@ export interface TemplateConfig {
   siteId: string;
   companyName: string;
   seoTitle: string;
-  content: PageContentSection[];
+  content: any[];
 }

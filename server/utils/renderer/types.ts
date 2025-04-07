@@ -6,7 +6,7 @@ export interface PageContext {
   slug: string;
   title: string;
   categories: string[];
-  content: PageContentSection[];
+  content: any[];
 }
 
 export interface BaseRenderConfig {

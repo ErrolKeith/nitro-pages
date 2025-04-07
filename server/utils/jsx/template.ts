@@ -1,5 +1,4 @@
 import { jsx } from "react/jsx-runtime";
-import { PageContentSection } from "../types";
 import { makeHomeTemplate } from "./templates/home";
 
 const templates = ["home", "page", "internal", "404", "index", "post"] as const;
@@ -10,7 +9,7 @@ export interface TemplateConfig {
   siteId: string;
   companyName: string;
   seoTitle: string;
-  content: PageContentSection[];
+  content: any[];
 }
 
 function makeTemplate(config: TemplateConfig) {
