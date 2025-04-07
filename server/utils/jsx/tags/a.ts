@@ -20,6 +20,7 @@ export interface AnchorConfig {
   props: AnchorProps;
   children: React.ReactElement[] | string;
 }
+
 export function makeAnchor(config: AnchorConfig) {
   return makeJsx("a", config.props, config.children);
 }

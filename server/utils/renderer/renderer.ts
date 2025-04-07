@@ -1,6 +1,6 @@
 import { renderToString } from "react-dom/server";
 import { HomeRenderConfig, BaseRenderConfig, PageRenderConfig } from "./types";
-import { makeTemplate } from "./jsx/template";
+import { makeTemplate } from "../jsx/template";
 import { SiteGlobals } from "~/types";
 
 function render(config: BaseRenderConfig) {
