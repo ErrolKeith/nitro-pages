@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`can make a mata tag 1`] = `
+<meta
+  content="asdfasdfs"
+  name="keywords"
+/>
+`;

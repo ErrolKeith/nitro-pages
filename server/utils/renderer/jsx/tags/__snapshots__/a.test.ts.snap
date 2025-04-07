@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`can make an anchor tag 1`] = `
+<a
+  className="a1-test"
+  href="#"
+  target="_self"
+>
+  intenral link
+</a>
+`;

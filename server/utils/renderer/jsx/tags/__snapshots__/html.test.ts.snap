@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`can make an html tag 1`] = `
+<html
+  data-site-id="1234235"
+/>
+`;

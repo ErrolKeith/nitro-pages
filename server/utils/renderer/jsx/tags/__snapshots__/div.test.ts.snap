@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`can make a div 1`] = `
+<div
+  className="div-class"
+  data-div-id="test-div-id-att"
+/>
+`;
