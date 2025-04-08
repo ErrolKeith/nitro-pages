@@ -1,4 +1,8 @@
 import { TemplateConfig } from "./types";
+import { makeHtml } from "../tags/html";
+import { makeHead } from "../tags/head";
+import { makeMain } from "../tags/main";
+import { makeTitle } from "../tags/title";
 
 export function make404Template(config: TemplateConfig) {
   const { siteId, seoTitle, content } = config;
