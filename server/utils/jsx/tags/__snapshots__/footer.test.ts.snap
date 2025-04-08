@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`can make a footer tag 1`] = `
+<footer
+  className="footer-class"
+/>
+`;

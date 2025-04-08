@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`can make heading tags 1`] = `
+<h1>
+  Sample heading level 1
+</h1>
+`;

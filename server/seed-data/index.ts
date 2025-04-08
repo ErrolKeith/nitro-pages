@@ -1,91 +1,139 @@
 // TODO: everything in this file should be DB data.
-import { Globals, PageRouteContext } from "../types";
+import { PageContext } from "~/utils/renderer/types";
+import { SiteGlobals } from "../types";
+
 const businessId = "4efb01e4-7ab4-42cb-9cdf-7cfe9b58a5b1";
 
-const randomServiceCategory = "service";
-const randomProductCategory = "product";
-const randomBusinessClient: Globals = {
+const randomBusinessClient: SiteGlobals = {
   businessId,
   siteId: "23bad6e0-6b06-43d5-9c45-8a42fdf38046",
   companyName: "Operatin Bidness",
   phoneNumber: "5554443333",
+  blogSettings: {
+    blogTitle: "Blog Posts",
+  },
 };
 
-const globalsCollection: Globals[] = [randomBusinessClient];
+const globalsCollection: SiteGlobals[] = [randomBusinessClient];
 
-const pageCollection: PageRouteContext[] = [
+interface PageCollection extends PageContext {
+  type: "page" | "post";
+}
+
+const pageCollection: PageCollection[] = [
   {
+    type: "page",
+    template: "home",
     slug: "",
-    title: globalsCollection.find(
-      (global) => global.businessId === randomBusinessClient.businessId
-    ).companyName,
+    title: "Home Page",
     categories: [],
+    content: [
+      {
+        type: "hero",
+        title: randomBusinessClient.companyName,
+        callout: "We Be Operatin",
+      },
+      {
+        type: "featured",
+        title: "Featured",
+        callout: "We Be Operatin",
+      },
+      {
+        type: "index-featured",
+        title: "Blog Index",
+        callout: "We Be Operatin",
+      },
+      {
+        type: "cta",
+        title: "CTA",
+        callout: "We Be Operatin",
+      },
+      {
+        type: "index-recent",
+        title: "Recent index items",
+        callout: "We Be Operatin",
+      },
+      {
+        type: "subscribe",
+        title: "Subscribe",
+        callout: "We Be Operatin",
+      },
+    ],
   },
   {
+    type: "page",
+    template: "page",
     slug: "about",
     title: "About",
     categories: [],
+    content: [],
   },
   {
+    type: "page",
+    template: "page",
     slug: "contact",
     title: "Contact",
     categories: [],
+    content: [],
   },
   {
+    type: "post",
+    template: "internal",
     slug: "phenominal-service",
     title: "A Phenominal Service",
-    categories: [randomServiceCategory],
+    categories: [],
+    content: [],
   },
   {
+    type: "post",
+    template: "internal",
     slug: "secondary-service",
     title: "A Secondary Service",
-    categories: [randomServiceCategory],
+    categories: [],
+    content: [],
   },
   {
+    type: "post",
+    template: "internal",
     slug: "unique-product",
     title: "A Unique Product",
-    categories: [randomProductCategory],
+    categories: [],
+    content: [],
   },
   {
+    type: "post",
+    template: "internal",
     slug: "secondary-product",
     title: "A Secondary Product",
-    categories: [randomProductCategory],
+    categories: [],
+    content: [],
   },
 ];
 
-function getPageCollection(): PageRouteContext[] {
+function getPageCollection(): PageCollection[] {
   return pageCollection;
 }
 
-function getGlobalsByBusinessId(id: string) {
-  return globalsCollection.find(
-    (global) => (global.businessId = randomBusinessClient.businessId)
-  );
+function getBlogIndex() {
+  return pageCollection.filter((page) => page.type === "post");
 }
 
-function getPageBySlug(slug: string): PageRouteContext | undefined {
+function getGlobalsByBusinessId(id: string) {
+  return globalsCollection.find((global) => (global.businessId = id));
+}
+
+function getHomePage(): PageContext | undefined {
+  return pageCollection.find((page) => page.slug === "");
+}
+
+function getPageBySlug(slug: string): PageContext | undefined {
   return pageCollection.find((page) => page.slug === slug);
 }
 
-function getCategoryIndex(category: string) {
-  return pageCollection.filter((page) => {
-    if (page.categories.includes(category)) return true;
-    return false;
-  });
-}
-
-function getCategoryPageBySlug(
-  category: string,
-  slug: string
-): PageRouteContext | undefined {
-  const pagesWithCategory = getCategoryIndex(category);
-  return pagesWithCategory.find((page) => page.slug === slug);
-}
-
 export {
-  getCategoryPageBySlug,
-  getCategoryIndex,
+  getBlogIndex,
   getGlobalsByBusinessId,
+  getHomePage,
   getPageBySlug,
   getPageCollection,
   randomBusinessClient,

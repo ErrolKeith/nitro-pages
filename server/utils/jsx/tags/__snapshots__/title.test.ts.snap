@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`can make a title tag 1`] = `
+<title>
+  test title
+</title>
+`;

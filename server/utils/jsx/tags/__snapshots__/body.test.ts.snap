@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`can make a body tag 1`] = `<body />`;
+
+exports[`can make a body tag 2`] = `
+<body>
+  <p>
+    test-body-content
+  </p>
+</body>
+`;

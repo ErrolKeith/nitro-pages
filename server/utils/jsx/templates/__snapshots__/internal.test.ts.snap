@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`can make an internal page 1`] = `
+<html
+  data-site-id="124246796763"
+>
+  <head>
+    <title>
+      sample internal
+    </title>
+  </head>
+  <main />
+</html>
+`;
