@@ -15,7 +15,6 @@ function makeTemplate(config: BaseRenderConfig) {
   const { content, title } = config.pageContext;
 
   const pageContent = content.map((content) => {
-    console.log(content);
     return makeParagraph({
       text: `Template type: ${config.pageContext.template}`,
     });
