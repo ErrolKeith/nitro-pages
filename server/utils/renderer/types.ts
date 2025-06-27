@@ -1,16 +1,17 @@
 import { SiteGlobals } from "~/types";
-import { TemplateType } from "../jsx/template";
+
+const templates = ["home", "page", "internal", "404", "index", "post"] as const;
+type TemplateType = (typeof templates)[number];
 
 export interface PageContext {
   template: TemplateType;
   slug: string;
   title: string;
-  categories: string[];
+  head: unknown[];
   content: unknown[];
 }
 
 export interface BaseRenderConfig {
-  template: TemplateType;
   clientGlobals: SiteGlobals;
   pageContext: PageContext;
 }

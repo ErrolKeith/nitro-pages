@@ -23,7 +23,7 @@ export default defineEventHandler((event) => {
         template: "index",
         slug: "",
         title: clientGlobals.blogSettings.blogTitle,
-        categories: [],
+        head: [],
         content: posts.map((post) => {
           return {
             type: "hero",

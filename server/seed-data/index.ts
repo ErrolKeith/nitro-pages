@@ -26,7 +26,7 @@ const pageCollection: PageCollection[] = [
     template: "home",
     slug: "",
     title: "Home Page",
-    categories: [],
+    head: [],
     content: [
       {
         type: "hero",
@@ -65,7 +65,7 @@ const pageCollection: PageCollection[] = [
     template: "page",
     slug: "about",
     title: "About",
-    categories: [],
+    head: [],
     content: [],
   },
   {
@@ -73,7 +73,7 @@ const pageCollection: PageCollection[] = [
     template: "page",
     slug: "contact",
     title: "Contact",
-    categories: [],
+    head: [],
     content: [],
   },
   {
@@ -81,7 +81,7 @@ const pageCollection: PageCollection[] = [
     template: "internal",
     slug: "phenominal-service",
     title: "A Phenominal Service",
-    categories: [],
+    head: [],
     content: [],
   },
   {
@@ -89,7 +89,7 @@ const pageCollection: PageCollection[] = [
     template: "internal",
     slug: "secondary-service",
     title: "A Secondary Service",
-    categories: [],
+    head: [],
     content: [],
   },
   {
@@ -97,7 +97,7 @@ const pageCollection: PageCollection[] = [
     template: "internal",
     slug: "unique-product",
     title: "A Unique Product",
-    categories: [],
+    head: [],
     content: [],
   },
   {
@@ -105,7 +105,7 @@ const pageCollection: PageCollection[] = [
     template: "internal",
     slug: "secondary-product",
     title: "A Secondary Product",
-    categories: [],
+    head: [],
     content: [],
   },
 ];
